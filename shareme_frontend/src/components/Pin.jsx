@@ -15,7 +15,6 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
     const alreadySaved = !!(save?.filter((item) => item.postedBy._id === user.sub))?.length;
     const savePin = (id) => {
         if (!alreadySaved) {
-
             client
                 .patch(id)
                 .setIfMissing({ save: [] })
@@ -92,13 +91,13 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                                     className="bg-white flex items-center gap-2 text-black font-bold py-2 px-4 rounded-full opacity-70 hover:100 hover:shadow-md"
                                 >
                                     <BsFillArrowUpRightCircleFill />
-                                    {destination.length > 20 ? destination.slice(8, 25) : destination.slice(8)}
+                                    {destination.length > 15 ? `${destination.slice(0, 15)}...` : destination}
                                 </a>
                             )}
                             {postedBy?._id === user.sub && (
                                 <button
                                     type="button"
-                                    className="bg-white p-2 opacity-70 hover:opacity-100 font-bold text-dark text-base rounded-3xl hover:shadow-md outline-none"
+                                    className="bg-white p-3 opacity-70 hover:opacity-100 font-bold text-dark text-base rounded-3xl hover:shadow-md outline-none"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         deletePin(_id);
