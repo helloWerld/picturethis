@@ -8,7 +8,7 @@ module.exports = {
         320: '320px',
       },
       width: {
-        190: '190px',
+        220: '220px',
         275: '275px',
         300: '300px',
         340: '340px',
@@ -46,7 +46,7 @@ module.exports = {
         navColor: '#BEBEBE',
       },
       backgroundColor: {
-        mainColor: '#FBF8F9',
+        mainColor: '#FFF',
         secondaryColor: '#F0F0F0',
         blackOverlay: 'rgba(0, 0 ,0 ,0.7)',
       },
